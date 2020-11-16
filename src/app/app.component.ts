@@ -8,9 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'virtual-background-tool';
 
-  constructor(){}
-
-  start() {
-
-  }
 }

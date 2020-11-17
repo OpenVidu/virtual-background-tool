@@ -14,13 +14,17 @@ import {MatInputModule} from '@angular/material/input';
 import { FinalComponent } from './components/final/final.component';
 import { RecordingComponent } from './components/recording/recording.component';
 
+import {MatStepperModule} from '@angular/material/stepper';
+import { PreRecordingComponent } from './components/pre-recording/pre-recording.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     PresentationComponent,
     FormComponent,
     FinalComponent,
-    RecordingComponent
+    RecordingComponent,
+    PreRecordingComponent
   ],
   imports: [
     BrowserModule,
@@ -31,8 +35,8 @@ import { RecordingComponent } from './components/recording/recording.component';
     ReactiveFormsModule,
     MatCheckboxModule,
     MatFormFieldModule,
-    MatInputModule
-
+    MatInputModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

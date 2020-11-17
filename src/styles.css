@@ -80,3 +80,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     }
 
   }
+
+.important-text {
+  font-size: large;
+  font-weight: bold;
+}
+span {
+  font-size: medium;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: rgb(199, 0, 0);
+}

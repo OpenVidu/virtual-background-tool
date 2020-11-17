@@ -1,0 +1,133 @@
+<div class="container">
+	<span
+		>We will ask you to record several videos with the typical positions when
+		you participate in a video conference.</span
+	>
+
+	<span>
+		As automatic background detection is a really difficult problem to be
+		executed in realtime we want to make the job for the algorithm a bit
+		easier.</span
+	>
+
+	<div class="info">
+		<mat-horizontal-stepper #stepper>
+			<mat-step>
+				<ng-template matStepLabel>Camera</ng-template>
+
+				<div>
+					<span>Please </span>
+					<span class="important-text green">fix the camera </span>
+					<span>on a table or on top of a desktop monitor. </span>
+					<br />
+					<span class="important-text red"
+						>Don’t record the videos using a mobile phone or laptop on your
+						hands or legs</span
+					>
+				</div>
+
+				<br />
+				<div>
+					<button mat-button matStepperNext>Next</button>
+				</div>
+			</mat-step>
+
+			<mat-step label="Background">
+				<div>
+					<span>It is important to</span>
+					<span class="important-text green">
+						have a still background without any change in every video
+					</span>
+					<br />
+
+					<span
+						>For example, you can record yourself in front of a wall, bookcase,
+						fourniture, etc.
+					</span>
+					<br />
+
+					<span class="important-text">Please check that</span>
+					<span class="important-text red">
+						your shadow is not visible on the wall</span
+					>
+					<span> as it can be considered as a “movement”</span>
+
+					<div class="img-container">
+						<img src="https://picsum.photos/200" alt="" />
+					</div>
+
+					<span class="important-text">Please </span>
+					<span class="important-text red">
+						avoid chairs to be visible while recording the video.
+					</span>
+					<br />
+					<span>
+						it is harder for the algorithm to differentiate between shoulders
+						and chair</span
+					>
+					<div class="img-container">
+						<img src="https://picsum.photos/200" alt="" />
+					</div>
+				</div>
+
+				<br />
+				<div>
+					<button mat-button matStepperPrevious>Back</button>
+					<button mat-button matStepperNext>Next</button>
+				</div>
+			</mat-step>
+
+			<mat-step label="Clothes">
+				<div>
+					<span>Please </span>
+					<span class="important-text green">
+						wear clothing that differs from the background
+					</span>
+					<br />
+
+					<span> Clothing of the </span>
+
+					<span class="important-text red">
+						same color as the background can confuse the algorithm.
+					</span>
+					<div class="img-container">
+						<img src="https://picsum.photos/200" alt="" />
+					</div>
+				</div>
+				<br />
+				<div>
+					<button mat-button matStepperPrevious>Back</button>
+					<button mat-button matStepperNext>Next</button>
+				</div>
+			</mat-step>
+
+			<mat-step label="Headphones">
+				<div>
+					<span>As a lot of people use big  </span>
+					<span class="important-text green">headphones </span>
+					<span>
+						when participating in video conferences</span>
+					<span class="important-text green">
+						we will try to teach the algorithm how to recognize it
+					</span>
+					<br />
+
+					<span> If you have headphones please </span>
+
+					<span class="important-text green">
+						prepare them as we will ask you to record some videos with them.
+					</span>
+					<div class="img-container">
+						<img src="https://picsum.photos/200" alt="" />
+					</div>
+				</div>
+				<br />
+				<div>
+
+					<button mat-button (click)="start()">Start</button>
+				</div>
+			</mat-step>
+
+		</mat-horizontal-stepper>
+	</div>
+</div>

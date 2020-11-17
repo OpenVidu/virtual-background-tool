@@ -22,8 +22,7 @@ export class FormComponent implements OnInit {
   start() {
     if (this.accepted) {
       this.showMessageError = false;
-      console.log("SAFSA")
-      this.router.navigate(['recording']);
+      this.router.navigate(['prerecording']);
 
     } else {
       this.showMessageError = true;

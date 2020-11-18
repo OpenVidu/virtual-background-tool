@@ -5,53 +5,55 @@
 		algorithms allowing you to replace your background in any video conference.
 	</p>
 
-	<mat-grid-list cols="2">
-		<mat-grid-tile class="img-grid">
-			<div class="image-container image-one">
-				<img src="https://picsum.photos/200" alt="" />
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-12 img-grid">
+				<div class="image-container image-one">
+					<img src="https://picsum.photos/200" alt="" />
+				</div>
+
+				<div class="image-container image-two">
+					<img src="https://picsum.photos/200" alt="" />
+				</div>
 			</div>
+			<div class="col-md-8 col-sm-8">
+				<div>
+					<h2>Virtual Background Feature</h2>
+					<p class="text">
+						Virtual background is a very useful feature to change the real
+						background with a sintetic background without having a green chroma
+						background. It improves privacity if you connect from your own
+						house. Also allows to provide a branded image for corporate usage.
+					</p>
+					<br /><br />
 
-			<div class="image-container image-two">
-				<img src="https://picsum.photos/200" alt="" />
+					<h2>Machine Learning</h2>
+					<p class="text">
+						We will request you to record several videos in typical situations
+						when you are in a videoconference. These videos will be used to
+						train machine learning algorithms so they can be applied in real
+						time when other people want to change the background when
+						participating in a video conference.
+					</p>
+					<br /><br />
+
+					<h2>Dataset</h2>
+					<p class="text">
+						You will have to record several small videos of different positions
+						and poses.
+					</p>
+
+					<br /><br />
+
+					<h2>Short Experiment</h2>
+					<p class="text">
+						You will need only 10 minutes of your valuable time.
+					</p>
+					<br /><br />
+				</div>
 			</div>
-		</mat-grid-tile>
-		<mat-grid-tile>
-			<div>
-				<h2>Virtual Background Feature</h2>
-				<p class="text">
-					Virtual background is a very useful feature to change the real
-					background with a sintetic background without having a green chroma
-					background. It improves privacity if you connect from your own house.
-					Also allows to provide a branded image for corporate usage.
-				</p>
-				<br /><br />
-
-				<h2>Machine Learning</h2>
-				<p class="text">
-					We will request you to record several videos in typical situations
-					when you are in a videoconference. These videos will be used to train
-					machine learning algorithms so they can be applied in real time when
-					other people want to change the background when participating in a
-					video conference.
-				</p>
-				<br /><br />
-
-				<h2>Dataset</h2>
-				<p class="text">
-					You will have to record several small videos of different positions
-					and poses.
-				</p>
-
-				<br /><br />
-
-				<h2>Short Experiment</h2>
-				<p class="text">You will need only 10 minutes of your valuable time.</p>
-				<br /><br />
-
-				<input type="hidden" #selection />
-			</div>
-		</mat-grid-tile>
-	</mat-grid-list>
+		</div>
+	</div>
 
 	<div class="card-container">
 		<div class="card" (click)="start()">
@@ -59,4 +61,3 @@
 		</div>
 	</div>
 </div>
-

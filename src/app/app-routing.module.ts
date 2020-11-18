@@ -9,9 +9,9 @@ import { RecordingComponent } from './components/recording/recording.component';
 const routes: Routes = [
   { path: '', component: PresentationComponent },
   { path: 'form', component: FormComponent },
-  { path: ':prerecording', component: PreRecordingComponent },
-  { path: ':recording', component: RecordingComponent },
-  { path: ':end', component: FinalComponent }
+  { path: 'prerecording', component: PreRecordingComponent },
+  { path: 'recording', component: RecordingComponent },
+  { path: 'end', component: FinalComponent }
 ];
 
 @NgModule({

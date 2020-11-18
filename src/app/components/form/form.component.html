@@ -1,8 +1,52 @@
-<div class="container">
+<div class="form-container">
+	<h3>We need your some little details to use the recording in the dataset:</h3>
+
+	<div class="radio-container">
+		<label class="radio-group-label">Gender: </label>
+		<mat-radio-group aria-label="Select an option" [(ngModel)]="gender">
+			<mat-radio-button value="M">Male</mat-radio-button>
+			<mat-radio-button value="F">Female</mat-radio-button>
+		</mat-radio-group>
+		<br />
+
+		<label class="radio-group-label">Hair: </label>
+		<mat-radio-group aria-label="Select an option" [(ngModel)]="hair">
+			<mat-radio-button value="N">No hair</mat-radio-button>
+			<mat-radio-button value="S">Short</mat-radio-button>
+			<mat-radio-button value="L">Long</mat-radio-button>
+		</mat-radio-group>
+		<br />
+
+		<!-- <label class="radio-group-label">Headset: </label>
+		<mat-radio-group aria-label="Select an option">
+			<mat-radio-button value="M">Male</mat-radio-button>
+			<mat-radio-button value="F">Female</mat-radio-button>
+		</mat-radio-group>
+		<br /> -->
+
+		<label class="radio-group-label">Skin: </label>
+		<mat-radio-group aria-label="Select an option" [(ngModel)]="skin">
+			<mat-radio-button value="L">Ligth</mat-radio-button>
+			<mat-radio-button value="D">Dark</mat-radio-button>
+		</mat-radio-group>
+		<br />
+
+		<span class="error-message" *ngIf="showInfoError"
+			>You have to complete the data above</span
+		>
+
+	</div>
+
+	<br>
+
 	<h3>We need your consent to use the recording in the dataset:</h3>
 
 	<section class="example-section">
-		<mat-checkbox class="example-margin" [(ngModel)]="accepted" (change)="onCheckboxChange($event)">
+		<mat-checkbox
+			class="example-margin"
+			[(ngModel)]="accepted"
+			(change)="onCheckboxChange($event)"
+		>
 			I accept that the recordings in this website to be used for creating
 			algorithms for virtual background in the context of video conference
 			applications. The dataset will be published on the Internet so other
@@ -10,7 +54,9 @@
 			other purpose.
 		</mat-checkbox>
 
-		<span class="error-message"  *ngIf="showMessageError">You have to accept the message above</span>
+		<span class="error-message" *ngIf="showMessageError"
+			>You have to accept the message above</span
+		>
 
 		<p>
 			If you want to be informed about dataset usage you can give us your email.
@@ -20,38 +66,16 @@
 			<div class="example-container">
 				<mat-form-field appearance="legacy">
 					<mat-label>Enter your email</mat-label>
-					<input type="email" matInput placeholder="mail@mail.com" [formControl]="email" />
+					<input
+						type="email"
+						matInput
+						placeholder="mail@mail.com"
+						[formControl]="email"
+					/>
 				</mat-form-field>
 			</div>
 		</form>
 	</section>
-	<!-- <form [formGroup]="form" novalidate>
-		  <div class="form-group">
-			  <label>Name:</label>
-			  <input class="form-control" formControlName="name" type="text">
-		  </div>
-		  <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="alert alert-danger">
-			  <div *ngIf="form.controls['name'].errors.required">
-				Name is required.
-			  </div>
-		  </div>
-		   <div class="form-group">
-			  <label>Address:</label>
-			  <input class="form-control" formControlName="address" type="text">
-		  </div>
-		  <div *ngIf="form.controls['address'].invalid && (form.controls['address'].dirty || form.controls['address'].touched)" class="alert alert-danger">
-			  <div *ngIf="form.controls['address'].errors.required">
-				email is required.
-			  </div>
-		  </div>
-		  <button type="submit"
-			  [disabled]="form.pristine || form.invalid" class="btn btn-success">
-			  Save
-		  </button>
-	</form>
-	<br />
-	<p>Form value: {{ form.value | json }}</p>
-	<p>Form status: {{ form.status | json }}</p> -->
 
 	<div class="card-container">
 		<div class="card" (click)="start()">

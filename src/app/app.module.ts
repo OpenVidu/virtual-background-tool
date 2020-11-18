@@ -16,6 +16,7 @@ import { RecordingComponent } from './components/recording/recording.component';
 
 import {MatStepperModule} from '@angular/material/stepper';
 import { PreRecordingComponent } from './components/pre-recording/pre-recording.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PreRecordingComponent } from './components/pre-recording/pre-recording.
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
-    MatStepperModule
+    MatStepperModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

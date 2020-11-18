@@ -9,3 +9,17 @@ margin-top: 4px;
 .error-message {
 	color: red;
 }
+
+.mat-radio-button ~ .mat-radio-button {
+	margin-left: 16px;
+}
+
+.radio-group-label {
+	padding-right: 15px;
+	font-size: medium;
+}
+
+.form-container {
+	text-align: start;
+	padding: 20px 80px;
+}

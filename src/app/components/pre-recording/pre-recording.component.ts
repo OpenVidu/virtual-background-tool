@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RecordingData} from '../../interfaces/recording-data';
+
 
 @Component({
   selector: 'app-pre-recording',
@@ -8,14 +10,20 @@ import { Router } from '@angular/router';
 })
 export class PreRecordingComponent implements OnInit {
 
-  constructor(private router: Router) { }
+
+  recordingData: RecordingData;
+
+
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe((params: RecordingData) => {
+      this.recordingData = params;
+		});
   }
 
   start() {
-    this.router.navigate(['recording']);
-
+    this.router.navigate(['recording', this.recordingData]);
   }
 
 }

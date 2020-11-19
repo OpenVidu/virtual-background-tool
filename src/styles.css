@@ -85,7 +85,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: large;
   font-weight: bold;
 }
-span {
+span, .text {
   font-size: medium;
 }
 
@@ -98,7 +98,8 @@ span {
 }
 
 .img-container {
-	margin: 10px;
+  margin: 10px;
+  text-align: center;
 }
 
 .content {

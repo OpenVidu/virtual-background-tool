@@ -1,0 +1,53 @@
+<div class="container">
+
+	<div class="row">
+		<div class="info-container col-md-6 col-sm-6">
+			<mat-vertical-stepper  #stepper>
+				<mat-step>
+					<ng-template matStepLabel>
+						<div [innerHTML]="caseToShow.title"></div>
+					</ng-template>
+					<h3 [innerHTML]="caseToShow.subtitle"></h3>
+					<br>
+					<ul *ngFor="let string of caseToShow.text">
+						<li class="text" [innerHTML]="string"></li>
+					</ul>
+					<div class="img-container" *ngIf="caseToShow.image">
+						<p class="text">{{caseToShow.imageText}}</p>
+						<img [src]="caseToShow.image" class="img">
+					</div>
+				</mat-step>
+			  </mat-vertical-stepper>
+		</div>
+
+		<div class="col-md-6 col-sm-6">
+			<div class="stream-container">
+				<video #videoElement></video>
+			</div>
+
+			<div class="preview" #preview >
+				<div *ngIf="canContinue">
+					<span>Video Recorded</span>
+					<br>
+				</div>
+
+			</div>
+
+			<div class="card-container">
+				<div class="card" *ngIf="caseToShow.record" (click)="startRecording()">
+					<span>Start Recording</span>
+				</div>
+				<div class="card" *ngIf="caseToShow.record && index !== recordingCases.length && !canContinue" (click)="showNextRecordingCase(true)">
+					<span>Skip Recording</span>
+				</div>
+
+				<div class="card" *ngIf="!caseToShow.record || canContinue" (click)="showNextRecordingCase()">
+					<span *ngIf="caseToShow.record">Send and Continue</span>
+					<span *ngIf="!caseToShow.record">Continue</span>
+				</div>
+			</div>
+
+			<mat-progress-bar mode="determinate" [value]="recordingProgress" *ngIf="localRecorder?.state === recorderState.RECORDING"></mat-progress-bar>
+		</div>
+	</div>
+</div>

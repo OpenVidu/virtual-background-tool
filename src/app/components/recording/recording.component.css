@@ -1,0 +1,16 @@
+.stream-container{
+	margin: auto;
+	text-align: center;
+}
+
+.stream-container video {
+	max-width: 70%;
+}
+
+img {
+	max-width: 400px;
+	border: 2px solid;
+}
+.info-container{
+	text-align: start;
+}

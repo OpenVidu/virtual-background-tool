@@ -21,6 +21,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
   recordingProgress = 0;
   recorderState = LocalRecorderState;
   canContinue = false;
+  emailSent = false;
   videoPreview: HTMLVideoElement;
 
   recordingCases = [
@@ -925,6 +926,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
         skin: this.dataSrv.getSkin(),
         hair: this.dataSrv.getHair(),
         gender: this.dataSrv.getGender(),
+        email: !this.emailSent ? this.dataSrv.getEmail() : '', // Send email only once
         headphones: this.caseToShow?.headphones ? 'with_headphones' : 'without_headphones',
         distance: this.caseToShow.distance,
         position: this.caseToShow.position,
@@ -936,6 +938,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
           'Content-Type': 'application/octet-stream',
           Data: JSON.stringify(data)
         };
+        this.emailSent = true;
         await this.localRecorder.uploadAsBinary('/recording', headers);
 
       } catch (error) {

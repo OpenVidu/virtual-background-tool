@@ -26,6 +26,10 @@ export class DataService {
     return this.data.skin;
   }
 
+  getEmail(): string {
+    return this.data.email;
+  }
+
   getGender(): Gender {
     return this.data.gender;
   }

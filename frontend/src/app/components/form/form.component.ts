@@ -4,7 +4,7 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 
-import {Gender, Hair, UserData, Skin} from '../../interfaces/user-data';
+import {Gender, Hair, Skin} from '../../interfaces/user-data';
 
 @Component({
   selector: 'app-form',
@@ -28,7 +28,7 @@ export class FormComponent implements OnInit {
   start() {
     if (!!this.gender &&  !!this.skin && !!this.hair){
       this.showInfoError = false;
-      this.dataSrv.setData({gender: this.gender, hair: this.hair, skin: this.skin});
+      this.dataSrv.setData({gender: this.gender, hair: this.hair, skin: this.skin, email: this.email.value});
     }
     else {
       this.showInfoError = true;

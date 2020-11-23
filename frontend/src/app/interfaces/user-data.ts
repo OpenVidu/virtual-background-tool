@@ -3,6 +3,7 @@ export interface UserData {
 	gender: Gender;
 	hair: Hair;
 	skin: Skin;
+	email?: string;
 }
 
 

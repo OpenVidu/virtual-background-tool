@@ -41,7 +41,7 @@ function saveFile(file, res, data) {
 	try {
 		prepareFiles(rootDir, extensionPath);
 	} catch (error) {
-		res..status(500).send("Error creating directorys. Maybe insufficient permissions");
+		res.status(500).send("Error creating directorys. Maybe insufficient permissions");
 		return;
 	}
 

@@ -923,8 +923,8 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  async showNextRecordingCase(skip?: boolean){
-    if (this.caseToShow.record || !skip) {
+  async showNextRecordingCase(sendVideo: boolean){
+    if (sendVideo) {
       const data = {
         skin: this.personalData.skin,
         hair: this.personalData.hair,

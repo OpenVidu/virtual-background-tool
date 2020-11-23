@@ -37,11 +37,11 @@
 				<div class="card" *ngIf="caseToShow.record" (click)="startRecording()">
 					<span>Start Recording</span>
 				</div>
-				<div class="card" *ngIf="caseToShow.record && index !== recordingCases.length && !canContinue" (click)="showNextRecordingCase(true)">
+				<div class="card" *ngIf="caseToShow.record && index !== recordingCases.length && !canContinue" (click)="showNextRecordingCase(false)">
 					<span>Skip Recording</span>
 				</div>
 
-				<div class="card" *ngIf="!caseToShow.record || canContinue" (click)="showNextRecordingCase()">
+				<div class="card" *ngIf="!caseToShow.record || canContinue" (click)="showNextRecordingCase(caseToShow.record)">
 					<span *ngIf="caseToShow.record">Send and Continue</span>
 					<span *ngIf="!caseToShow.record">Continue</span>
 				</div>

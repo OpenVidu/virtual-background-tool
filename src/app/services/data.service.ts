@@ -29,4 +29,8 @@ export class DataService {
   getGender(): Gender {
     return this.data.gender;
   }
+
+  isDataSaved(): boolean {
+    return !!this.data?.gender && !!this.data?.hair && !!this.data?.skin;
+  }
 }

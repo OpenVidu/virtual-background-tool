@@ -30,7 +30,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
       title: 'Recording the background',
       subtitle: '',
       text: ['First of all we are going to <strong>record only the background, without you</strong>.', 'The background has to be static, without changing chair positions or showing any shadows, but it can be any background, not just a simple color like the example and have as many details and items like frames or wardrobes on it.'],
-      imageText: 'Example:',
+      imageText: 'Your video should look like the following one:',
       image: 'assets/images/background.png',
       record: true,
       time: 4

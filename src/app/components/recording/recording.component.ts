@@ -1,8 +1,9 @@
 import { AfterViewInit } from '@angular/core';
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { LocalRecorder, LocalRecorderState, OpenVidu, Publisher } from 'openvidu-browser';
-import { Behaviour, Distance, Position, RecordingData } from 'src/app/interfaces/recording-data';
+import { Behaviour, Distance, Position, UserData } from 'src/app/interfaces/user-data';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-recording',
@@ -21,7 +22,6 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
   recorderState = LocalRecorderState;
   canContinue = false;
   videoPreview: HTMLVideoElement;
-  personalData: RecordingData;
 
   recordingCases = [
     {
@@ -852,7 +852,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('preview') previewElementRef: ElementRef;
 
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private dataSrv: DataService) {
     this.caseToShow = this.recordingCases[this.index];
   }
 
@@ -876,11 +876,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  ngOnInit() {
-    this.route.params.subscribe((params: RecordingData) => {
-      this.personalData = params;
-    });
-  }
+  ngOnInit() { }
   ngOnDestroy() {
 
     if (this.publisher){
@@ -926,9 +922,9 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
   async showNextRecordingCase(sendVideo: boolean){
     if (sendVideo) {
       const data = {
-        skin: this.personalData.skin,
-        hair: this.personalData.hair,
-        gender: this.personalData.gender,
+        skin: this.dataSrv.getSkin(),
+        hair: this.dataSrv.getHair(),
+        gender: this.dataSrv.getGender(),
         headphones: this.caseToShow?.headphones ? 'with_headphones' : 'without_headphones',
         distance: this.caseToShow.distance,
         position: this.caseToShow.position,

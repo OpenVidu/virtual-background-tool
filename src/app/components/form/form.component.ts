@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 
-import {Gender, Hair, RecordingData, Skin} from '../../interfaces/recording-data';
+import {Gender, Hair, UserData, Skin} from '../../interfaces/user-data';
 
 @Component({
   selector: 'app-form',
@@ -18,10 +19,8 @@ export class FormComponent implements OnInit {
   gender: Gender;
   hair: Hair;
   skin: Skin;
-  recordingData: RecordingData;
 
-
-  constructor(private router: Router) { }
+  constructor(private router: Router, private dataSrv: DataService) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +28,7 @@ export class FormComponent implements OnInit {
   start() {
     if (!!this.gender &&  !!this.skin && !!this.hair){
       this.showInfoError = false;
-      this.recordingData = {gender: this.gender, hair: this.hair, skin: this.skin};
+      this.dataSrv.setData({gender: this.gender, hair: this.hair, skin: this.skin});
     }
     else {
       this.showInfoError = true;
@@ -39,7 +38,7 @@ export class FormComponent implements OnInit {
 
     if (this.accepted) {
       this.showMessageError = false;
-      this.router.navigate(['prerecording', this.recordingData]);
+      this.router.navigate(['prerecording']);
 
     } else {
       this.showMessageError = true;

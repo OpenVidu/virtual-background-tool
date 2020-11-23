@@ -2,7 +2,7 @@ import { AfterViewInit } from '@angular/core';
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalRecorder, LocalRecorderState, OpenVidu, Publisher } from 'openvidu-browser';
-import { Behaviour, Distance, Position, UserData } from 'src/app/interfaces/user-data';
+import { Behaviour, Distance, Position } from 'src/app/interfaces/user-data';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -12,7 +12,6 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
 
-  RECORDING_TIME = 4;
   OV: OpenVidu;
   publisher: Publisher;
   localRecorder: LocalRecorder;

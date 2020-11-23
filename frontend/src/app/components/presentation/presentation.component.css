@@ -17,14 +17,10 @@
 	font-size: medium;
   }
 
-
-
-
-
-  .image-container {
+  .image-container img{
     border: 2px solid;
-    margin: 30px;
-    position: absolute;
+    max-width: 100%;
+    margin-bottom: 20px;
   }
 
   .image-one {
@@ -36,6 +32,13 @@
 
   }
 
-  .img-grid{
-	  max-width: calc(100%/3);
+  .presentation-content {
+    max-height: calc(100% - 82px);
+    margin: 82px auto 32px;
+    padding: 0 16px;
+
+  }
+  .info {
+    text-align: left;
+
   }

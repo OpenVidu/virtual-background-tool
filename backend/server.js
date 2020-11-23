@@ -28,8 +28,7 @@ app.post('/recording', (req, res) => {
 
 function saveFile(file, res, data) {
 
-	var rootDir = '/opt/openvidu/recordings-background-tool/';
-	// var rootDir = '/home/carlos/Desktop/recordings/';
+	var rootDir = '/opt/openvidu-virtual-background-tool/recordings/';
 	var extensionPath = data.gender + '/' + data.skin + '/' + data.hair + '/';
 
 	if(!!data.distance && !!data.behaviour && !!data.position && !!data.headphones) {

@@ -12,6 +12,9 @@
 					<ul *ngFor="let string of caseToShow.text">
 						<li class="text" [innerHTML]="string"></li>
 					</ul>
+					<ul *ngIf="caseToShow.time">
+						<li class="text">Recording time: <strong>{{caseToShow.time - 1}} seconds</strong></li>
+					</ul>
 					<div class="img-container" *ngIf="caseToShow.image">
 						<p class="text">{{caseToShow.imageText}}</p>
 						<img [src]="caseToShow.image" class="img">

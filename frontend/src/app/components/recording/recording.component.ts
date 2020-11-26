@@ -925,7 +925,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
         skin: this.dataSrv.getSkin(),
         hair: this.dataSrv.getHair(),
         gender: this.dataSrv.getGender(),
-        email: !this.emailSent ? this.dataSrv.getEmail() : '', // Send email only once
+        email: this.dataSrv.getEmail(),
         headphones: this.caseToShow?.headphones ? 'with_headphones' : 'without_headphones',
         distance: this.caseToShow.distance,
         position: this.caseToShow.position,

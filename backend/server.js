@@ -45,7 +45,7 @@ function saveFile(file, res, data) {
 	}
 
 	if(!!data.email){
-		// Saving email
+		// Saving email into a .txt
 		fs.appendFileSync(rootDir + EMAIL_FILE_NAME, data.email + '\n', function (err) {
 			if (err){
 				res.status(500).send("Error writing email in emails file");
@@ -55,8 +55,10 @@ function saveFile(file, res, data) {
 		  });
 	}
 
+	const timestamp = new Date().getTime();
+	const email = !!data.email ? data.email : '';
 	// Saving recording
-	fs.open(rootDir + extensionPath + uuid() + '.webm', 'w', function(err, fd) {
+	fs.open(rootDir + extensionPath + email + '-' + timestamp + '.webm', 'w', function(err, fd) {
         fs.write(fd, file, 0, file.length, null, function(err) {
             if (err){
 				res.status(500).send("Error saving recording in directory");

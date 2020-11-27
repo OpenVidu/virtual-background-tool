@@ -12,5 +12,5 @@
 ## Running docker container
 
 ```bash
-docker run -v {your-local-directory}:/opt/openvidu/openvidu-virtual-background-tool/recordings/ -p 127.0.0.1:5000:5000 openvidu/openvidu-virtual-background-tool
+docker run -d -v {}your-local-directory}:/opt/openvidu-virtual-background-tool/recordings/ -p {your-port}:5000 openvidu/openvidu-virtual-background-tool
 ```

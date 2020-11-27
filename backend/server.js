@@ -1,34 +1,18 @@
 var express = require('express');
 var app = express();
 var fs = require('fs');
-var https = require('https');
 var bodyParser = require('body-parser');
 var uuid = require('uuid').v1;
 const EMAIL_FILE_NAME = 'emails.txt';
 
 
 app.use(express.static(__dirname + '/public'));
-app.use(function(req, res, next) {
-	res.header('Access-Control-Allow-Origin', '*');
-	res.header(
-		'Access-Control-Allow-Headers',
-		'Origin, X-Requested-With, Content-Type, Accept',
-	);
-	next();
-});
-
-var options = {
-	key: fs.readFileSync('cert.key'),
-	cert: fs.readFileSync('cert.crt')
-};
-
 
 app.use(bodyParser.urlencoded({extended: true, limit: '50mb'}));
 app.use(bodyParser.json());
 app.use(bodyParser.raw({type: 'application/octet-stream', limit: '50mb'}));
 
-var secure = https.createServer(options, app);
-secure.listen(5000, () => {
+app.listen(5000, () => {
 	console.log('......................');
 	console.log('Listening in port 5000');
 });

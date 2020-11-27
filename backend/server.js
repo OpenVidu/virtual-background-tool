@@ -56,6 +56,7 @@ function saveFile(file, res, data) {
 	try {
 		prepareFiles(rootDir, extensionPath);
 	} catch (error) {
+		console.log("Error creating directorys. Maybe insufficient permissions");
 		res.status(500).send("Error creating directorys. Maybe insufficient permissions");
 		return;
 	}
@@ -64,6 +65,7 @@ function saveFile(file, res, data) {
 		// Saving email into a .txt
 		fs.appendFileSync(rootDir + EMAIL_FILE_NAME, data.email + '\n', function (err) {
 			if (err){
+				console.log("Error writing email in emails file");
 				res.status(500).send("Error writing email in emails file");
 				return;
 			}
@@ -77,11 +79,12 @@ function saveFile(file, res, data) {
 	fs.open(rootDir + extensionPath + email + '-' + timestamp + '.webm', 'w', function(err, fd) {
         fs.write(fd, file, 0, file.length, null, function(err) {
             if (err){
+				console.log("Error saving recording in directory: ", rootDir + extensionPath);
 				res.status(500).send("Error saving recording in directory");
 				return;
 			}
             fs.close(fd, function() {
-                console.log('wrote the file successfully');
+                console.log('File successfully saved on: ', rootDir + extensionPath);
                 res.status(200).end();
             });
         });

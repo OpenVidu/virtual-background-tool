@@ -11,7 +11,10 @@
   }
 
 
-
+.note {
+  background-color: rgb(202, 248, 248);
+  padding: 15px;
+}
 
   .text {
 	font-size: medium;
@@ -41,4 +44,8 @@
   .info {
     text-align: left;
 
+  }
+
+  .card-container {
+    margin-top: 0;
   }

@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-proxy": "ng serve --proxy-conf proxy.conf.json",
     "build": "./node_modules/@angular/cli/bin/ng build --prod --output-path=../backend/public"
   },
   "private": true,

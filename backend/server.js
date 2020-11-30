@@ -3,7 +3,7 @@ var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var uuid = require('uuid').v1;
-const EMAIL_FILE_NAME = 'emails.txt';
+// const EMAIL_FILE_NAME = 'emails.txt';
 
 
 app.use(express.static(__dirname + '/public'));
@@ -45,17 +45,17 @@ function saveFile(file, res, data) {
 		return;
 	}
 
-	if(!!data.email){
-		// Saving email into a .txt
-		fs.appendFileSync(rootDir + EMAIL_FILE_NAME, data.email + '\n', function (err) {
-			if (err){
-				console.log("Error writing email in emails file");
-				res.status(500).send("Error writing email in emails file");
-				return;
-			}
-			console.log('Email Saved!');
-		  });
-	}
+	// if(!!data.email){
+	// 	// Saving email into a .txt
+	// 	fs.appendFileSync(rootDir + EMAIL_FILE_NAME, data.email + '\n', function (err) {
+	// 		if (err){
+	// 			console.log("Error writing email in emails file");
+	// 			res.status(500).send("Error writing email in emails file");
+	// 			return;
+	// 		}
+	// 		console.log('Email Saved!');
+	// 	  });
+	// }
 
 	const timestamp = new Date().getTime();
 	const email = !!data.email ? data.email : '';
@@ -77,11 +77,11 @@ function saveFile(file, res, data) {
 
 
 function prepareFiles(rootDir, extensionPath) {
-	if (!fs.existsSync(rootDir + EMAIL_FILE_NAME)){
-		// Create emails file
-		fs.mkdirSync(rootDir, { recursive: true });
-		fs.writeFileSync(rootDir + EMAIL_FILE_NAME, 'Email list: \n');
-	}
+	// if (!fs.existsSync(rootDir + EMAIL_FILE_NAME)){
+	// 	// Create emails file
+	// 	fs.mkdirSync(rootDir, { recursive: true });
+	// 	fs.writeFileSync(rootDir + EMAIL_FILE_NAME, 'Email list: \n');
+	// }
 
 	if(!fs.existsSync(rootDir + extensionPath)){
 		// Create recordgins directory

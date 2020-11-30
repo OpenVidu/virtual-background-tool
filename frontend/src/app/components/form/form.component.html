@@ -17,7 +17,6 @@
 		</mat-radio-group>
 		<br />
 
-
 		<label class="radio-group-label">Skin: </label>
 		<mat-radio-group aria-label="Select an option" [(ngModel)]="skin">
 			<mat-radio-button value="light_skin">Light</mat-radio-button>
@@ -28,12 +27,128 @@
 		<span class="error-message" *ngIf="showInfoError"
 			>You have to complete the data above</span
 		>
-
 	</div>
 
-	<br>
-
+	<br />
 	<h3>We need your consent to use the recording in the dataset:</h3>
+
+	<div class="consent-form">
+		<h3>Video Conference Database Consent Form</h3>
+		<hr />
+		<p>
+			This document explains how your data will be treated if you take part in
+			this research study. Your participation is voluntary which means you can
+			choose whether or not to participate. Before you make a decision you will
+			need to know the purpose of the study and the use of your data.
+		</p>
+		<p>
+			If you do not understand what you are reading, do not sign it. Please ask
+			the researcher to explain anything you do not understand, including any
+			language contained in this form. If you decide to participate, you will be
+			asked to sign this form and a copy will be given to you. Keep this form;
+			in it you will find contact information and answers to questions about the
+			study.
+		</p>
+		<hr />
+
+
+		<h4>1 Purpose of this research</h4>
+		<p>
+			The goal of this study is to develop an application for video conferences
+			to apply virtual background. This application can be used to distinguish
+			the person on the video from the background scenery, so it can change the
+			background into another image or into a blurred background like it’s
+			currently done on some video call applications that you may know like
+			Zoom, Microsoft Teams or Google Meet.
+		</p>
+		<p>
+			To do this, we need to collect a set of videos in different poses that are
+			typical in video conference scenarios, including all the possible
+			situations like wearing headsets or not wearing them, or talking with hand
+			expressions or just standing.
+		</p>
+		<h4>2 Requirements for participation</h4>
+
+		<p>
+			In order to participate, you must be 18 years of age or older, and need to
+			be able to follow instructions and sit still long enough for videos to be
+			taken. You will also need a fixed camera and somewhere comfortable to sit
+			in front of it for at least a few minutes.
+		</p>
+		<h4>3 What we need from you</h4>
+		<p>
+			If you agree to participate, we will take video portraits of you in a
+			variety of poses. You will also be asked to provide your age, skin color,
+			gender and hair style.
+		</p>
+		<p>
+			You will first be asked to take a picture of your background only, and
+			then to be close, medium distance or far from the camera and do a set of
+			poses with the guidance of video examples. Each video will take at least 3
+			seconds and some of them at least 10 seconds to get more variety of
+			images. Then, you will be asked to repeat the same videos for the other
+			distances and with or without headsets. The full process will take no
+			longer than 30 minutes. There is no need to do all the videos in all the
+			poses, but we appreciate having the full set of data.
+		</p>
+
+		<h4>4 Risks</h4>
+		<p>
+			Only ordinary digital photographs will be taken of you. We anticipate no
+			risks to your health or safety.
+		</p>
+
+		<h4>5 Benefits</h4>
+		<p>
+			You are not expected to benefit directly from this project. However, we
+			hope that your participation will help to improve our application
+			technology.
+		</p>
+
+		<h4>6 What will happen to the information collected</h4>
+		<h5>6.1 Training and evaluation of a virtual background application</h5>
+
+		<p>
+			Your video conference videos will be used to train and test virtual
+			background applications. This means other researchers at the Universidad
+			Rey Juan Carlos may be allowed to have controlled access to your images.
+			The pictures will also be run through computer programs, and may be used
+			to train and test subject segmentation. This access will be strictly
+			controlled and supervised.
+		</p>
+
+		<h5>6.2 Privacy risks</h5>
+
+		<p>
+			Even if some of the pictures in the final data set are inadvertently
+			disclosed, your name will never be released. However, since the images are
+			of your face, if any researchers inadvertently release the pictures, you
+			may be identified. If you are uncomfortable with this possible occurrence,
+			please do not sign this consent form or participate in the research.
+		</p>
+
+		<p>
+			Even if the demographic information was also inadvertently disclosed, the
+			information (gender, race, and approximate age) is already clear from the
+			photographs in most cases. Any unauthorized person who came into
+			possession of the data would only be able to verify this information. They
+			would not know your name or any other identifying information.
+		</p>
+
+		<p>
+			However, we will do all we can to prevent the information from being
+			inadvertently disclosed, and we do not expect that this will happen.
+		</p>
+		<h5>6.3 Publications</h5>
+		<p>
+			Some frames of the videos could be published in journals, conference
+			papers, magazine articles, or any investigation sites to serve as
+			examples. Your videos could also be published along with the article as a
+			whole dataset to serve other researchers with the same purposes.
+		</p>
+	</div>
+
+	<br />
 
 	<section class="example-section">
 		<mat-checkbox

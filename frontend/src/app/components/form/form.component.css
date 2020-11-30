@@ -23,3 +23,15 @@ margin-top: 4px;
 	text-align: start;
 	padding: 20px 80px;
 }
+
+.consent-form {
+	overflow-y: auto;
+	max-height: 300px;
+	border: 0.5px solid #919191;
+	padding: 10px;
+	text-align: justify;
+}
+
+.card-container {
+	margin-top: 0;
+}

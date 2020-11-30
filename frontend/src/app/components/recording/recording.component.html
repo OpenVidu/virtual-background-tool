@@ -5,7 +5,10 @@
 			<mat-vertical-stepper #stepper>
 				<mat-step>
 					<ng-template matStepLabel>
-						<div [innerHTML]="caseToShow.title"></div>
+						<div [innerHTML]="caseToShow.title">1111</div>
+						<div class="progress-info">
+							<strong>{{index + 1}}</strong> / {{recordingCases.length}}
+						</div>
 					</ng-template>
 					<h3 [innerHTML]="caseToShow.subtitle"></h3>
 					<br>

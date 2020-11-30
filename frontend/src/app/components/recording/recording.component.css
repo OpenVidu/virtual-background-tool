@@ -20,3 +20,10 @@ img {
 	color: #ffffff;
 
 }
+
+.progress-info{
+	position: absolute;
+	right: 0;
+	top: 35%;
+	bottom: 0;
+}

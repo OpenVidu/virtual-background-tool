@@ -23,6 +23,9 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
   emailSent = false;
   videoPreview: HTMLVideoElement;
 
+  interval: NodeJS.Timeout;
+  timeout: NodeJS.Timeout;
+
   recordingCases = [
     {
       id: 0,
@@ -896,21 +899,16 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
 
       try {
 
-        const interval = setInterval(() => {
+        this.interval = setInterval(() => {
           this.recordingProgress += (1.05 / this.caseToShow.time);
         }, 10);
         await this.localRecorder.record();
 
-
-
-        setTimeout(async () => {
-          clearInterval(interval);
-          this.recordingProgress = 100;
-          await this.localRecorder.stop();
+        this.timeout = setTimeout(async () => {
+          await this.stopRecording();
           this.videoPreview = this.localRecorder.preview(this.previewElementRef.nativeElement);
           this.videoPreview.controls = true;
           this.videoPreview.style.maxWidth = '50%';
-          this.recordingProgress = 0;
           this.canContinue = true;
         }, this.caseToShow.time * 1000);
       } catch (error) {
@@ -956,10 +954,11 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     this.canContinue = false;
   }
 
-  stopRecording() {
-    this.localRecorder.stop().then(() => {
-      this.localRecorder.download();
-    });
+  async stopRecording() {
+    clearTimeout(this.timeout);
+    await this.localRecorder.stop();
+    clearInterval(this.interval);
+    this.recordingProgress = 0;
   }
 
 

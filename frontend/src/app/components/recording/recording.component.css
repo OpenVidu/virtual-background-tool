@@ -14,3 +14,9 @@ img {
 .info-container{
 	text-align: start;
 }
+
+.cancelButton{
+	background-color: rgb(182, 45, 45);
+	color: #ffffff;
+
+}

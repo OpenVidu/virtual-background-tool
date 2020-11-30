@@ -38,7 +38,8 @@
 
 			<div class="card-container">
 				<div class="card" *ngIf="caseToShow.record" (click)="startRecording()">
-					<span>Start Recording</span>
+					<span *ngIf="!canContinue">Start Recording</span>
+					<span *ngIf="canContinue">Repeat Recording</span>
 				</div>
 				<div class="card" *ngIf="caseToShow.record && index !== recordingCases.length && !canContinue" (click)="showNextRecordingCase(false)">
 					<span>Skip Recording</span>

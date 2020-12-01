@@ -594,7 +594,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 2,
       title: 'Recording <strong>GESTURING WITHOUT HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>FAR</strong>', 'Position: <strong>FRONT</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withoutheadphones/farFrontGesturing.gif',
@@ -608,7 +608,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 4,
       title: 'Recording <strong>GESTURING WITHOUT HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>FAR</strong>', 'Position: <strong>HEAD TILTED</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withoutheadphones/farHeadTiltedGesturing.gif',
@@ -622,7 +622,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 4,
       title: 'Recording <strong>GESTURING WITHOUT HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>FAR</strong>', 'Position: <strong>TILTED</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withoutheadphones/farTiltedGesturing.gif',
@@ -637,7 +637,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 5,
       title: 'Recording <strong>GESTURING WITHOUT HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>MEDIUM</strong>', 'Position: <strong>FRONT</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withoutheadphones/mediumFrontGesturing.gif',
@@ -651,7 +651,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 6,
       title: 'Recording <strong>GESTURING WITHOUT HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>MEDIUM</strong>', 'Position: <strong>HEAD TILTED</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withoutheadphones/mediumHeadTiltedGesturing.gif',
@@ -665,7 +665,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 7,
       title: 'Recording <strong>GESTURING WITHOUT HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>MEDIUM</strong>', 'Position: <strong>TILTED</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withoutheadphones/mediumTiltedGesturing.gif',
@@ -680,7 +680,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 8,
       title: 'Recording <strong>GESTURING WITHOUT HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>NEAR</strong>', 'Position: <strong>FRONT</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withoutheadphones/nearFrontGesturing.gif',
@@ -694,7 +694,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 9,
       title: 'Recording <strong>GESTURING WITHOUT HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>NEAR</strong>', 'Position: <strong>HEAD TILTED</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withoutheadphones/nearHeadTiltedGesturing.gif',
@@ -708,7 +708,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 10,
       title: 'Recording <strong>GESTURING WITHOUT HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>NEAR</strong>', 'Position: <strong>TILTED</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withoutheadphones/nearTiltedGesturing.gif',
@@ -724,7 +724,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 2,
       title: 'Recording <strong>GESTURING WITH HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>FAR</strong>', 'Position: <strong>FRONT</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withheadphones/farFrontGesturing.gif',
@@ -738,7 +738,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 4,
       title: 'Recording <strong>GESTURING WITH HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>FAR</strong>', 'Position: <strong>HEAD TILTED</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withheadphones/farHeadTiltedGesturing.gif',
@@ -752,7 +752,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 4,
       title: 'Recording <strong>GESTURING WITH HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>FAR</strong>', 'Position: <strong>TILTED</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withheadphones/farTiltedGesturing.gif',
@@ -767,7 +767,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 5,
       title: 'Recording <strong>GESTURING WITH HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>MEDIUM</strong>', 'Position: <strong>FRONT</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withheadphones/mediumFrontGesturing.gif',
@@ -781,7 +781,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 6,
       title: 'Recording <strong>GESTURING WITH HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>MEDIUM</strong>', 'Position: <strong>HEAD TILTED</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withheadphones/mediumHeadTiltedGesturing.gif',
@@ -795,7 +795,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 7,
       title: 'Recording <strong>GESTURING WITH HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>MEDIUM</strong>', 'Position: <strong>TILTED</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withheadphones/mediumTiltedGesturing.gif',
@@ -810,7 +810,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 8,
       title: 'Recording <strong>GESTURING WITH HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>NEAR</strong>', 'Position: <strong>FRONT</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withheadphones/nearFrontGesturing.gif',
@@ -824,7 +824,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 9,
       title: 'Recording <strong>GESTURING WITH HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>NEAR</strong>', 'Position: <strong>HEAD TILTED</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withheadphones/nearHeadTiltedGesturing.gif',
@@ -838,7 +838,7 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     {
       id: 10,
       title: 'Recording <strong>GESTURING WITH HEADPHONES</strong>',
-      subtitle: 'Please recording the following situation:',
+      subtitle: '<strong>Now we need see your hands and non common gestures.</strong><br> Please recording the following situation:',
       text: ['Camera distance: <strong>NEAR</strong>', 'Position: <strong>TILTED</strong>', 'Behaviour: <strong>GESTURING</strong>'],
       imageText: 'Your video should look like the following one:',
       image: 'assets/images/withheadphones/nearTiltedGesturing.gif',

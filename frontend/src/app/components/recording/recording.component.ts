@@ -20,11 +20,11 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
   recordingProgress = 0;
   recorderState = LocalRecorderState;
   canContinue = false;
-  emailSent = false;
+  isRecording = false;
   videoPreview: HTMLVideoElement;
-
   interval: NodeJS.Timeout;
   timeout: NodeJS.Timeout;
+  preRecordingTimeout: NodeJS.Timeout;
 
   recordingCases = [
     {
@@ -888,12 +888,21 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  async startRecording() {
+  startRecordingDelay() {
     if (this.localRecorder.state === LocalRecorderState.FINISHED){
       this.videoPreview?.remove();
       this.localRecorder?.clean();
       this.canContinue = false;
     }
+    this.isRecording = true;
+
+
+    this.preRecordingTimeout = setTimeout(() => {
+      this.startRecording();
+    }, 2000);
+  }
+
+  async startRecording() {
 
     if (this.caseToShow.record && this.localRecorder.state === LocalRecorderState.READY){
 
@@ -906,13 +915,18 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
 
         this.timeout = setTimeout(async () => {
           await this.stopRecording();
+          this.isRecording = false;
           this.videoPreview = this.localRecorder.preview(this.previewElementRef.nativeElement);
           this.videoPreview.controls = true;
           this.videoPreview.style.maxWidth = '50%';
           this.canContinue = true;
         }, this.caseToShow.time * 1000);
       } catch (error) {
+        this.isRecording = false;
         console.error(error);
+        clearInterval(this.interval);
+        clearTimeout(this.timeout);
+        this.canContinue = true;
       }
     }
   }
@@ -935,7 +949,6 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
           'Content-Type': 'application/octet-stream',
           Data: JSON.stringify(data)
         };
-        this.emailSent = true;
         await this.localRecorder.uploadAsBinary('/recording', headers);
 
       } catch (error) {
@@ -955,8 +968,12 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   async stopRecording() {
+    clearTimeout(this.preRecordingTimeout);
     clearTimeout(this.timeout);
-    await this.localRecorder.stop();
+    if (this.localRecorder.state === LocalRecorderState.RECORDING) {
+      await this.localRecorder.stop();
+    }
+    this.isRecording = false;
     clearInterval(this.interval);
     this.recordingProgress = 0;
   }

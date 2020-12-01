@@ -40,15 +40,15 @@
 			</div>
 
 			<div class="card-container">
-				<div class="card" *ngIf="caseToShow.record && localRecorder?.state !== recorderState.RECORDING" (click)="startRecording()">
+				<div class="card" *ngIf="caseToShow.record && !isRecording" (click)="startRecordingDelay()">
 					<span *ngIf="!canContinue">Start Recording</span>
 					<span *ngIf="canContinue">Repeat Recording</span>
 				</div>
-				<div class="card" *ngIf="caseToShow.record && index !== recordingCases.length && !canContinue  && localRecorder?.state !== recorderState.RECORDING" (click)="showNextRecordingCase(false)">
+				<div class="card" *ngIf="caseToShow.record && index !== recordingCases.length && !canContinue && !isRecording" (click)="showNextRecordingCase(false)">
 					<span>Skip Recording</span>
 				</div>
 
-				<div class="card cancelButton" *ngIf="localRecorder?.state === recorderState.RECORDING" (click)="stopRecording()">
+				<div class="card cancelButton" *ngIf="isRecording" (click)="stopRecording()">
 					<span>Cancel Recording</span>
 				</div>
 
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 
-			<mat-progress-bar mode="determinate" [value]="recordingProgress" *ngIf="localRecorder?.state === recorderState.RECORDING"></mat-progress-bar>
+			<mat-progress-bar mode="determinate" [value]="recordingProgress" *ngIf="isRecording"></mat-progress-bar>
 		</div>
 	</div>
 </div>

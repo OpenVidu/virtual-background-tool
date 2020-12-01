@@ -26,6 +26,9 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
   timeout: NodeJS.Timeout;
   preRecordingTimeout: NodeJS.Timeout;
 
+  completeRecordingSound: HTMLAudioElement;
+  startRecordingSound: HTMLAudioElement;
+
   recordingCases = [
     {
       id: 0,
@@ -872,6 +875,8 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
       mirror: true           // Whether to mirror your local video or not
     });
     this.localRecorder = this.OV.initLocalRecorder(this.publisher.stream);
+    this.startRecordingSound = new Audio('assets/audio/start.wav');
+    this.completeRecordingSound = new Audio('assets/audio/complete.wav');
 
 
     if (!!this.elementRef) {
@@ -889,6 +894,8 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   startRecordingDelay() {
+    this.startRecordingSound.play();
+
     if (this.localRecorder.state === LocalRecorderState.FINISHED){
       this.videoPreview?.remove();
       this.localRecorder?.clean();
@@ -896,10 +903,9 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     }
     this.isRecording = true;
 
-
     this.preRecordingTimeout = setTimeout(() => {
       this.startRecording();
-    }, 2000);
+    }, 4000);
   }
 
   async startRecording() {
@@ -971,11 +977,18 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     clearTimeout(this.preRecordingTimeout);
     clearTimeout(this.timeout);
     if (this.localRecorder.state === LocalRecorderState.RECORDING) {
+      this.completeRecordingSound.play();
+
       await this.localRecorder.stop();
     }
     this.isRecording = false;
     clearInterval(this.interval);
     this.recordingProgress = 0;
+  }
+
+  playSound() {
+    const audio = new Audio('assets/audio/start.wav');
+    audio.play();
   }
 
 

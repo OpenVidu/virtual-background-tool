@@ -976,9 +976,9 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
   async stopRecording() {
     clearTimeout(this.preRecordingTimeout);
     clearTimeout(this.timeout);
+    this.stopSound(this.startRecordingSound);
     if (this.localRecorder.state === LocalRecorderState.RECORDING) {
       this.completeRecordingSound.play();
-
       await this.localRecorder.stop();
     }
     this.isRecording = false;
@@ -986,11 +986,9 @@ export class RecordingComponent implements OnInit, OnDestroy, AfterViewInit {
     this.recordingProgress = 0;
   }
 
-  playSound() {
-    const audio = new Audio('assets/audio/start.wav');
-    audio.play();
+  private stopSound(sound: HTMLAudioElement) {
+    sound.pause();
+    sound.currentTime = 0;
   }
-
-
 
 }

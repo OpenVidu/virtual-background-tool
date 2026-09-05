@@ -1,5 +1,8 @@
 ## openvidu-virtual-background-tool
 
+> [!WARNING]
+> **This repository is no longer maintained.**
+
 
  ### Build docker image
 
